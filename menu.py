@@ -14,6 +14,7 @@ if __name__ == '__main__':
             print("|{:^9}{}{:^9}|".format(' ','ADMINISTRACION DE CAMPUS',' '))
             print('+','-'*40,'+')
             print("""1. Areas de Campus
+                
 2. Personal de Campus
 3. Inventario salones de Campus
 4. Insidencias de Campus
@@ -23,7 +24,8 @@ if __name__ == '__main__':
                 areas.crearArea()
                 areas.Menu()
             elif (opcion==2):
-                pass
+                personal.crearpersona()
+                personal.Menu()
             elif (opcion==3):
                 pass
             elif (opcion==4):

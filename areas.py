@@ -18,8 +18,7 @@ def Menu():
     print('+','-'*48,'+')
     print("""1. Agregar Area
 2. Agregar Salon
-3. Eliminar salon o area
-4. Salir""")
+3. Salir""")
     opcion = int(input("Digite una opcion: "))
 
     if (opcion==1):
@@ -85,6 +84,4 @@ def Menu():
     #                         core.EditarData("areas.json",diccAreas)
 
     elif (opcion==4):
-        bandera = False
-    if (bandera==False):
-        Menu()
+        bandera=False
