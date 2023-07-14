@@ -18,7 +18,8 @@ def Menu():
     print('+','-'*48,'+')
     print("""1. Agregar Area
 2. Agregar Salon
-3. Salir""")
+3. Eliminar Area o salon
+4. Salir""")
     opcion = int(input("Digite una opcion: "))
 
     if (opcion==1):
@@ -58,30 +59,30 @@ def Menu():
             elif ((contadorSalon) == (len(diccAreas['data']))):
                 print("No existe ninguna area con este ID")
                 input("")
-    # elif (opcion==3):
-    #     os.system("clear")
-    #     print('+','-'*43,'+')
-    #     print("|{:^12}{}{:^14}|".format(' ','ELIMINAR AREA O SALON',' '))
-    #     print('+','-'*43,'+')
-    #     opcion = int(input("Desea eliminar:\n1. Area\n2. Salon\n: "))
-    #     contador = 0
-    #     area = input("Digite el nombre del area: ").title()
-    #     for i,item in enumerate (diccAreas['data']):
-    #         contador+=1
-    #         if (opcion==1):
-    #             if (area==item["nombre"]):
-    #                 diccAreas['data'].pop(item)
-    #                 core.EditarData("areas.json",diccAreas)
-    #                 break
-    #             elif (contador == len(diccAreas['data'])):
-    #                 print("No existe ninguna area con este ID")
-    #         elif (opcion==2):
-    #             if (area==item["nombre"]):
-    #                 salon = input("Digite el nombre del salon: ").title()
-    #                 for i,item2 in enumerate(item["salones"]):
-    #                     if (salon == item2["nombre"]):
-    #                         diccAreas['data'].pop(i)
-    #                         core.EditarData("areas.json",diccAreas)
+    elif (opcion==3):
+        os.system("clear")
+        print('+','-'*43,'+')
+        print("|{:^12}{}{:^14}|".format(' ','ELIMINAR AREA O SALON',' '))
+        print('+','-'*43,'+')
+        opcion = int(input("Desea eliminar:\n1. Area\n2. Salon\n: "))
+        contador = 0
+        area = input("Digite el nombre del area: ").title()
+        for i,item in enumerate (diccAreas['data']):
+            contador+=1
+            if (opcion==1):
+                if (area==item["nombre"]):
+                    diccAreas['data'].pop(item)
+                    core.EditarData("areas.json",diccAreas)
+                    break
+                elif (contador == len(diccAreas['data'])):
+                    print("No existe ninguna area con este ID")
+            elif (opcion==2):
+                if (area==item["nombre"]):
+                    salon = input("Digite el nombre del salon: ").title()
+                    for i,item2 in enumerate(item["salones"]):
+                        if (salon == item2["nombre"]):
+                            diccAreas['data'][item].pop(item2)
+                            core.EditarData("areas.json",diccAreas)
 
     elif (opcion==4):
         bandera=False

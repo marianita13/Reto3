@@ -13,9 +13,9 @@ def crearpersona():
 def Menu():
     os.system("clear")
     bandera = True
-    print('+','-'*55,'+')
+    print('+','-'*51,'+')
     print("|{:^12}{}{:^15}|".format(' ','ADMINISTRACION DE PERSONAL',' '))
-    print('+','-'*55,'+')
+    print('+','-'*51,'+')
     print("""1. Agregar personal
 2. Buscar personal
 3. Editar personal
@@ -31,6 +31,7 @@ def Menu():
         id = input("Digite el Id: ")
         if id in ids:
             print("El id ya esta registrado")
+            input("")
         else:
             tipos = ["Trainer", "Camper", "Admin", "Review programmer"]
             for i,item in enumerate (tipos):
@@ -52,17 +53,38 @@ def Menu():
             diccPersonal["data"].append(persona)
             core.crearInfo("personal.json", persona)
     elif (opcion==2):
+        contador = 0
         id = input("Digite el Id: ")
         for i,item in enumerate(diccPersonal["data"]):
+            contador +=1
             if id in item["id"]:
                 os.system("clear")
                 print(f"ID: {item['id']}\nNombre: {item['nombre']}\nOcupacion: {item['ocupacion']}\nEmail Personal: {item['emailPersonal']}\nEmail Corporativo: {item['emailCorporativo']}\nCelular: {item['celular']}\nTelefono: {item['telefono']}\nTelefono empresarial: {item['PhoneBuss']}")
                 input("")
+            elif (contador==len(diccPersonal["data"])):
+                print("ID no registrado")
+                input("")
     elif (opcion==3):
+        contador = 0
         id = input("Digite el Id: ")
         for i,item in enumerate(diccPersonal["data"]):
+            contador +=1
             if id in item["id"]:
-                print("Hola")
+                item["nombre"] = input("Digite el nuevo nombre: ").title() or item["nombre"]
+                item["emailPersonal"] = input("Digite el email personal nuevo: ") or item["emailPersonal"]
+                item["emailCorporativo"] = input("Digite el email corporativo nuevo: ") or item["emailCorporativo"]
+                item["celular"] = input("Digite el nuevo numero de celular: ")
+
+                print("NUEVOS CAMBIOS")
+                for llave,valor in item.items():
+                    print(f"{llave}: {valor}")
+                input("")
+
+                core.EditarData("personal.json",diccPersonal)
+                break
+            elif (contador == len(diccPersonal["data"])):
+                print("ID no registrado")
+                input("")
     elif (opcion==4):
         pass
     elif (opcion==5):

@@ -9,6 +9,20 @@
                     "nombre": "Hunters"
                 }
             ]
+        },
+        {
+            "id": "58",
+            "nombre": "Training",
+            "salones": [
+                {
+                    "id": "74",
+                    "nombre": "74"
+                },
+                {
+                    "id": "63",
+                    "nombre": "69"
+                }
+            ]
         }
     ]
 }
