@@ -71,7 +71,9 @@ def Menu():
             contador+=1
             if (opcion==1):
                 if (area==item["nombre"]):
-                    diccAreas['data'].pop(item)
+                    print(diccAreas['data'])
+                    diccAreas['data'].pop(i)
+                    print("Area eliminada")
                     core.EditarData("areas.json",diccAreas)
                     break
                 elif (contador == len(diccAreas['data'])):
@@ -79,9 +81,10 @@ def Menu():
             elif (opcion==2):
                 if (area==item["nombre"]):
                     salon = input("Digite el nombre del salon: ").title()
-                    for i,item2 in enumerate(item["salones"]):
+                    for a,item2 in enumerate(item["salones"]):
                         if (salon == item2["nombre"]):
-                            diccAreas['data'][item].pop(item2)
+                            item["salones"].remove(item2)
+                            print("Salon eliminado")
                             core.EditarData("areas.json",diccAreas)
 
     elif (opcion==4):

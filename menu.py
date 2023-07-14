@@ -26,7 +26,9 @@ if __name__ == '__main__':
                 personal.crearpersona()
                 personal.Menu()
             elif (opcion==3):
-                pass
+                inventario.buscarInfoAreas()
+                inventario.crearInventario()
+                inventario.Menu()
             elif (opcion==4):
                 pass
             elif (opcion==5):

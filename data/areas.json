@@ -11,16 +11,12 @@
             ]
         },
         {
-            "id": "58",
+            "id": "45",
             "nombre": "Training",
             "salones": [
                 {
-                    "id": "74",
-                    "nombre": "74"
-                },
-                {
-                    "id": "63",
-                    "nombre": "69"
+                    "id": "24",
+                    "nombre": "Apolo"
                 }
             ]
         }
