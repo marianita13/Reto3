@@ -46,20 +46,23 @@ def Menu():
                 "celular": input("Digite el numero de celular: "),
                 "telefono": input("Digite el numero fijo: "),
                 "PhoneBuss": input("Digite el numero empresarial: "),
-                "ocupacion":ocupacion
+                "ocupacion": ocupacion
             }
 
             diccPersonal["data"].append(persona)
             core.crearInfo("personal.json", persona)
     elif (opcion==2):
         id = input("Digite el Id: ")
-        for i in range (diccPersonal["data"]):
-            if id in i["id"]:
+        for i,item in enumerate(diccPersonal["data"]):
+            if id in item["id"]:
                 os.system("clear")
-                print(f"ID: {i['id']}\nNombre: {i['nombre']}\nOcupacion: {i['ocupacion']}\nEmail Personal: {i['emailPersonal']}\nEmail Corporativo: {i['emailCorporativo']}\nCelular: {i['celular']}\nTelefono: {i['telefono']}\nTelefono empresarial: {i['PhoneBuss']}")
+                print(f"ID: {item['id']}\nNombre: {item['nombre']}\nOcupacion: {item['ocupacion']}\nEmail Personal: {item['emailPersonal']}\nEmail Corporativo: {item['emailCorporativo']}\nCelular: {item['celular']}\nTelefono: {item['telefono']}\nTelefono empresarial: {item['PhoneBuss']}")
                 input("")
     elif (opcion==3):
-        pass
+        id = input("Digite el Id: ")
+        for i,item in enumerate(diccPersonal["data"]):
+            if id in item["id"]:
+                print("Hola")
     elif (opcion==4):
         pass
     elif (opcion==5):
