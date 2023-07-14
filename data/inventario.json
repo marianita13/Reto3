@@ -1,0 +1,16 @@
+{
+    "data": [
+        {
+            "Id": "22",
+            "Area": "Review1",
+            "Salon": "Hunters",
+            "Perife": [
+                {
+                    "nombre": "Mouse",
+                    "id": "22",
+                    "Marca": "compumax"
+                }
+            ]
+        }
+    ]
+}

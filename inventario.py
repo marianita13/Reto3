@@ -51,6 +51,7 @@ def Menu():
                 contador+=1
                 if areas == i+1:
                     area = itemB["nombre"]
+                    contador=0
                 elif (contador==len(AreasInfo['data'])):
                     print("Esta area no esta registrada")
             
@@ -80,16 +81,42 @@ def Menu():
 
             idP = input("Digite el id del pc: ")
             idsP = []
-            for i in range (len(diccInventario["data"][id]["Perife"])):
-                idsP.append(diccInventario["data"][i]["id"])
+            if (len(diccInventario["data"])==0):
+                pass
+            else:
+                for i in range (len(diccInventario["data"]["id"]["Perife"])):
+                    idsP.append(diccInventario["data"][i]["id"])
 
-            id = input("Digite el Id: ")
-            if idP in idsP:
-                print("El id ya esta registrado")
-                input("")
+                idP = input("Digite el Id: ")
+                if idP in idsP:
+                    print("El id ya esta registrado")
+                    input("")
+
+            objetos = ["Diadema", "Teclado", "Mouse"]
+            for l,itemX in enumerate(objetos):
+                print(f'{l+1}: {itemX}')
+            op = int(input("Elije una: "))
+            contadorA= 0
+            for i,itemJ in enumerate(objetos):
+                contadorA+=1
+                if op == i+1:
+                    objeto = objetos[i]
+                elif (contador==len(objetos)):
+                    print("Esta opcion no esta disponible")
+            Marca = input("Digita la marca: ")
+                    
+            dataP = {
+                "nombre":objeto,
+                "id":idP,
+                "Marca":Marca
+            }
+            data["Perife"].append(dataP)
+            diccInventario["data"].append(data)
+            core.crearInfo("inventario.json",data)
 
     elif (opcion==2):
-        pass
+        print("hola\ncomo\nestas")
+        input("")
     elif (opcion==3):
         pass
     elif (opcion==4):
