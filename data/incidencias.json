@@ -1,0 +1,40 @@
+{
+    "data": [
+        {
+            "Hardware": [
+                {
+                    "codigo": "01",
+                    "prioridad": "Leve",
+                    "fecha_creacion": "2023-07-15",
+                    "descripcion": "Profe mi pc ta malito, arreglelo:(",
+                    "area": "Training",
+                    "salon": "Apolo",
+                    "usuario": "Javis Morales",
+                    "cargo": "Camper"
+                }
+            ],
+            "Software": [
+                {
+                    "codigo": "01",
+                    "prioridad": "Moderada",
+                    "fecha_creacion": "2023-07-15",
+                    "descripcion": "Profe mi pc ta malito, arreglelo:(",
+                    "area": "Review 1",
+                    "salon": "Corvus",
+                    "usuario": "Mariana Acero",
+                    "cargo": "Camper"
+                },
+                {
+                    "codigo": "02",
+                    "prioridad": "Moderada",
+                    "fecha_creacion": "2023-07-15",
+                    "descripcion": "Profe mi pc ta malito, arreglelo:(",
+                    "area": "Review 1",
+                    "salon": "Corvus",
+                    "usuario": "Jolhver",
+                    "cargo": "Trainer"
+                }
+            ]
+        }
+    ]
+}

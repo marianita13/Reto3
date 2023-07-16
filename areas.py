@@ -27,17 +27,25 @@ def Menu():
         print('+','-'*36,'+')
         print("|{:^12}{}{:^14}|".format(' ','AGREGAR AREA',' '))
         print('+','-'*36,'+')
-        nombre = input("Nombre del area: ").title()
-        id = input("Id del area: ")
-        data = {
-            "id":id,
-            "nombre":nombre,
-            "salones":[]
-        }
-        diccAreas['data'].append(data)
-        core.crearInfo("areas.json",data)
-        print("Area registrada")
-        input("")
+        ids = []
+        for i in range(len(diccAreas['data'])):
+            ids.append(diccAreas['data'][i]['id'])
+        id = input("Ingrese el Id del Area: ")
+        if id in ids:
+            print("El ID ya está registrado.")
+            input("")
+        else:
+            nombre = input("Nombre del area: ").title()
+            id = input("Id del area: ")
+            data = {
+                "id":id,
+                "nombre":nombre,
+                "salones":[]
+            }
+            diccAreas['data'].append(data)
+            core.crearInfo("areas.json",data)
+            print("Area registrada")
+            input("")
     elif (opcion==2):
         os.system("clear")
         print('+','-'*37,'+')
@@ -45,6 +53,7 @@ def Menu():
         print('+','-'*37,'+')
         id = input("Digite el Id del area: ")
         contadorSalon = 0
+        banderaA=False
         for i in diccAreas['data']:
             contadorSalon+=1
             if i["id"]==id:
@@ -56,6 +65,9 @@ def Menu():
                 }
                 i["salones"].append(data)
                 core.EditarData("areas.json",diccAreas)
+                banderaA = True
+            elif (banderaA==True):
+                break
             elif ((contadorSalon) == (len(diccAreas['data']))):
                 print("No existe ninguna area con este ID")
                 input("")

@@ -2,13 +2,35 @@
     "data": [
         {
             "Id": "22",
+            "Area": "Training",
+            "Salon": "Apolo",
+            "Perife": [
+                {
+                    "nombre": "Audifonos",
+                    "Id": "22",
+                    "marca": "Hp"
+                },
+                {
+                    "nombre": "Teclado",
+                    "Id": "14",
+                    "marca": "Compumax"
+                },
+                {
+                    "nombre": "Mouse",
+                    "Id": "3",
+                    "marca": "Havit"
+                }
+            ]
+        },
+        {
+            "Id": "13",
             "Area": "Review1",
             "Salon": "Hunters",
             "Perife": [
                 {
-                    "nombre": "Mouse",
-                    "id": "22",
-                    "Marca": "compumax"
+                    "nombre": "Teclado",
+                    "Id": "23",
+                    "marca": "p"
                 }
             ]
         }

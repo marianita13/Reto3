@@ -9,7 +9,7 @@ if __name__ == '__main__':
     bandera = True
     while (bandera==True):
         try:
-            os.system("clear")
+            os.system("cls")
             print('+','-'*40,'+')
             print("|{:^9}{}{:^9}|".format(' ','ADMINISTRACION DE CAMPUS',' '))
             print('+','-'*40,'+')
@@ -30,7 +30,11 @@ if __name__ == '__main__':
                 inventario.crearInventario()
                 inventario.Menu()
             elif (opcion==4):
-                pass
+                insidencias.buscarInfoInventario()
+                insidencias.buscarInfoAreas()
+                insidencias.buscarInfoPersonal()
+                insidencias.crearIncidencias()
+                insidencias.Menu()
             elif (opcion==5):
                 bandera = False
                 

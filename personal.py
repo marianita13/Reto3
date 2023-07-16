@@ -62,6 +62,7 @@ def Menu():
         print("|{:^12}{}{:^15}|".format(' ','BUSCAR PERSONAL',' '))
         print('+','-'*41,'+')
         contador = 0
+        banderaP = False
         id = input("Digite el Id: ")
         for i,item in enumerate(diccPersonal["data"]):
             contador +=1
@@ -69,6 +70,9 @@ def Menu():
                 os.system("clear")
                 print(f"ID: {item['id']}\nNombre: {item['nombre']}\nOcupacion: {item['ocupacion']}\nEmail Personal: {item['emailPersonal']}\nEmail Corporativo: {item['emailCorporativo']}\nCelular: {item['celular']}\nTelefono: {item['telefono']}\nTelefono empresarial: {item['PhoneBuss']}")
                 input("")
+                banderaP = True
+            elif (banderaP==True):
+                break
             elif (contador==len(diccPersonal["data"])):
                 print("ID no registrado")
                 input("")
@@ -86,7 +90,7 @@ def Menu():
                 item["nombre"] = input("Digite el nuevo nombre: ").title() or item["nombre"]
                 item["emailPersonal"] = input("Digite el email personal nuevo: ") or item["emailPersonal"]
                 item["emailCorporativo"] = input("Digite el email corporativo nuevo: ") or item["emailCorporativo"]
-                item["celular"] = input("Digite el nuevo numero de celular: ")
+                item["celular"] = input("Digite el nuevo numero de celular: ") or item["celular"]
                 os.system("clear")
                 print("NUEVOS CAMBIOS")
                 for llave,valor in item.items():
@@ -108,7 +112,7 @@ def Menu():
         for i,item in enumerate(diccPersonal["data"]):
             contador +=1
             if id in item["id"]:
-                diccPersonal["data"].pop(item)
+                diccPersonal["data"].remove(item)
                 core.EditarData("personal.json",diccPersonal)
             elif (contador==len(diccPersonal["data"])):
                 print("ID no registrado")
